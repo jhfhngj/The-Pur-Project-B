@@ -1,4 +1,5 @@
 import os
+import sys
 def splitter(text: str):
     return text.split("(")
 var = {}
@@ -58,3 +59,5 @@ def rfl(file):
     with open(file,"r") as f:
         reads = f.readlines()
     read(reads)
+if len(sys.argv) > 1:
+    read(sys.argv[1])
