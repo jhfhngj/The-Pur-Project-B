@@ -25,3 +25,4 @@ def rfl(file):
     with open(file,"r") as f:
         reads = f.readlines()
     read(reads)
+    

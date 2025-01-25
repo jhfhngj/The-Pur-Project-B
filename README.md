@@ -26,10 +26,12 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `runlib` - is called.
 
-(Lib set is untested.)
-
 # Syntax
 
 Syntax is like this:
 
 `command(input`
+
+# Built-in libraries
+
+Breakfast - library to ensure Pur is working properly by saying foods
