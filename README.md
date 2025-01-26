@@ -22,7 +22,7 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 ## Documentation
 
-`print` - prints a var or a string.
+`prt` - prints a var or a string.
 
 `into` - inputs into a var.
 
@@ -36,6 +36,8 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `frvr` - Forever loop, uses `end` only for 'go to start again'
 
+`runpy` - Runs a Python program, in your Pur program.
+
 ### Syntax
 
 Syntax is like this:
@@ -46,6 +48,23 @@ For each of what might be a period in the original Pur, is now a left circle bra
 
 ### Built-in libraries
 
-Breakfast - library to ensure Pur is working properly by saying foods - used for debugging the user modified Pur, or me, to test stuff.
+Breakfast - function library to ensure Pur is working properly by saying foods - used for debugging the user modified Pur, or me, to test stuff.
 
 Quiz - program library. Sample proglib to show you the power of Pur 1.2.
+
+### How to use the interpreter after you make your code?
+
+Luckily, Pur is easy, so the arguments are tiny!
+
+To run a file using the Pur interpreter, do `python3 main.py your_program`.
+
+## Examples
+
+Forever - forever loop!
+
+```
+prt(Starting Forever...
+frvr(
+prt(FOREVER!
+end(
+```
