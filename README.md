@@ -26,12 +26,18 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `runlib` - is called.
 
+`if=` - checks if var/str is equal to var/str. Outputs to var or runs code until
+
+`end` - , which is a universal to Pur end, for loops (soon) and conditionals.
+
 # Syntax
 
 Syntax is like this:
 
 `command(input`
 
+For each of what might be a period in the original Pur, is now a left circle bracket.
+
 # Built-in libraries
 
-Breakfast - library to ensure Pur is working properly by saying foods
+Breakfast - library to ensure Pur is working properly by saying foods - used for debugging the user modified Pur, or me, to test stuff.
