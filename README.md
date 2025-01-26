@@ -30,6 +30,8 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `end` - , which is a universal to Pur end, for loops (soon) and conditionals.
 
+`frvr` - Forever loop, uses `end` only for 'go to start again'
+
 # Syntax
 
 Syntax is like this:
@@ -41,3 +43,5 @@ For each of what might be a period in the original Pur, is now a left circle bra
 # Built-in libraries
 
 Breakfast - library to ensure Pur is working properly by saying foods - used for debugging the user modified Pur, or me, to test stuff.
+
+Quiz - program library. Sample proglib to show you the power of Pur 1.2.
