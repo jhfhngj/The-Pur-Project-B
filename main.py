@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import os
 import sys
 def splitter(text: str):
@@ -61,3 +62,4 @@ def rfl(file):
     read(reads)
 if len(sys.argv) > 1:
     read(sys.argv[1])
+    input("Press Enter to continue . . . ")
