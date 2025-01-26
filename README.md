@@ -28,7 +28,7 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `if=` - checks if var/str is equal to var/str. Outputs to var or runs code until
 
-`end` - , which is a universal to Pur end, for loops (soon) and conditionals.
+`end` - , which is a universal to Pur end, for loops and conditionals.
 
 `frvr` - Forever loop, uses `end` only for 'go to start again'
 
