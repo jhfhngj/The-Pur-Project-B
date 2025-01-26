@@ -2,13 +2,17 @@
 
 Remake of Pur, Pur originally was hard to develop
 
-# What is Pur?
+## How to install Pur?
+
+Not that complicated yet
+
+## What is Pur?
 
 Pur is an open-source programming language developed in Python.
 
 It was originally made in 2024, but the newest is in 2025.
 
-# Why Pur?
+## Why Pur?
 
 Pur has a simple syntax with small command names so you can type fast.
 
@@ -16,7 +20,7 @@ It is also versatile, as you can go in the code and add commands for your progra
 
 If you want, the releases can also let you run them in executable form. (soon)
 
-# Documentation
+## Documentation
 
 `print` - prints a var or a string.
 
@@ -32,7 +36,7 @@ If you want, the releases can also let you run them in executable form. (soon)
 
 `frvr` - Forever loop, uses `end` only for 'go to start again'
 
-# Syntax
+### Syntax
 
 Syntax is like this:
 
@@ -40,7 +44,7 @@ Syntax is like this:
 
 For each of what might be a period in the original Pur, is now a left circle bracket.
 
-# Built-in libraries
+### Built-in libraries
 
 Breakfast - library to ensure Pur is working properly by saying foods - used for debugging the user modified Pur, or me, to test stuff.
 
