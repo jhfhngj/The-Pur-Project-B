@@ -61,5 +61,5 @@ def rfl(file):
         reads = f.readlines()
     read(reads)
 if len(sys.argv) > 1:
-    read(sys.argv[1])
+    rfl(sys.argv[1])
     input("Press Enter to continue . . . ")
