@@ -1,0 +1,12 @@
+prt(Quiz 1.0 - Math
+prt(What is 1 + 1?
+into(result
+if=(result(2(out
+prt(Correct
+end(
+prt(Now what is 2 + 2?
+into(result
+if=(result(2(out
+prt(Also correct!
+end(
+prt(Quiz done!

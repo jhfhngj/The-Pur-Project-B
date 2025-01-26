@@ -9,6 +9,7 @@ out = ""
 def read(code):
     code = list(code)
     out = ""
+    typel = ""
     i = 0
     while i < len(code):
         line = code[i]
@@ -32,6 +33,38 @@ def read(code):
                 with open(splitter(line)[1]) as f:
                     r = f.readlines()
                 read(r)
+        elif splitter(line)[0] == "if!=":
+            if var.get(splitter(line)[1]) == None:
+                v1 = "str"
+            else:
+                v1 = "var"
+            if var.get(splitter(line)[2]) == None:
+                v2 = "str"
+            else:
+                v2 = "var"
+            if v1 == "str" and v2 == "str":
+                if splitter(line)[1] != splitter(line)[2]:
+                    out = "True"
+                else:
+                    out = "False"
+            if v1 == "var" and v2 == "var":
+                if var.get(splitter(line)[1]) != var.get(splitter(line)[2]):
+                    out = "True"
+                else:
+                    out = "False"
+            if v1 == "str" and v2 == "var":
+                if splitter(line)[1] != var.get(splitter(line)[1]):
+                    out = "True"
+                else:
+                    out = "False"
+            if v1 == "var" and v2 == "str":
+                if var.get(splitter(line)[1]) != splitter(line)[2]:
+                    out = "True"
+                else:
+                    out = "False"
+            var.update({splitter(line)[3]: out})
+            if out == "False":
+                i = end
         elif splitter(line)[0] == "if=":
             if var.get(splitter(line)[1]) == None:
                 v1 = "str"
@@ -62,16 +95,28 @@ def read(code):
                 else:
                     out = "False"
             var.update({splitter(line)[3]: out})
-            start = i
             if out == "False":
                 i = end
-        if splitter(line)[0] == "end":
+        elif splitter(line)[0] == "frvr":
+            start = i
+            typel = "loopf"
+        # elif splitter(line)[0] == "rpt":
+        #     start = i
+        #     typel = "loopr"
+        #     times = splitter(line)[1]
+        elif splitter(line)[0] == "end":
             end = i
+            if typel == 'loopf':
+                i = start
         i += 1
 def rfl(file):
+    rode = []
     with open(file,"r") as f:
         reads = f.readlines()
-    read(reads)
+    for one in reads:
+        one = one.rstrip()
+        rode.append(one)
+    read(rode)
 if len(sys.argv) > 1:
     rfl(sys.argv[1])
     input("Press Enter to continue . . . ")
