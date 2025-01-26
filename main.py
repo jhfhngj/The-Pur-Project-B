@@ -108,6 +108,8 @@ def read(code):
             end = i
             if typel == 'loopf':
                 i = start
+        elif s(line)[0] == "runpy":
+            os.system(f"python3 {s(line)[1]}")
         i += 1
 def rfl(file):
     rode = []
