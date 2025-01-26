@@ -7,8 +7,15 @@ var = {}
 libs = []
 out = ""
 def read(code):
+    code = list(code)
     out = ""
-    for line in code:
+    i = 0
+    while i < len(code):
+        line = code[i]
+        try:
+            end = code.index("end(", i)
+        except:
+            end = len(code)
         if splitter(line)[0] == "prt":
             if var.get(splitter(line)[1]) == None:
                 print(splitter(line)[1])
@@ -55,7 +62,12 @@ def read(code):
                 else:
                     out = "False"
             var.update({splitter(line)[3]: out})
-           
+            start = i
+            if out == "False":
+                i = end
+        if splitter(line)[0] == "end":
+            end = i
+        i += 1
 def rfl(file):
     with open(file,"r") as f:
         reads = f.readlines()
