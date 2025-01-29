@@ -1,9 +1,15 @@
 #!/usr/bin/python
 import os
 import sys
+import serial
+from serial import Serial as sl
+
+serial.Serial.baudrate = 3200
+
+
 def s(text: str):
     return text.split("(")
-var = {}
+var = {"args": str(sl.readline(sl))}
 libs = []
 dirlibs = []
 out = ""
@@ -42,12 +48,13 @@ def read(code):
                     read(rd)
         elif s(line)[0] == "uselib":
                 if dirlibs.count(s(line)[1]) > 0:
-                    if os.path.exists(f"{s(line)[1]}/{s(line)[2]}"):
-                        with open(f"{s(line)[1]}/{s(line)[2]}") as f:
+                    if os.path.exists(s(line)[1]):
+                        with open(s(line)[1]) as f:
                             r = f.readlines()
                             rd = []
                             for line in r:
                                 rd.append(line.rstrip())
+                            sl.write(sl,bytes(s(line)[2]))
                             read(rd)
         elif s(line)[0] == "if!=":
             if var.get(s(line)[1]) == None:
