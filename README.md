@@ -3,7 +3,7 @@
 Remake of Pur, Pur originally was hard to develop
 
 > [!WARNING]
-> Do not communicate on serial 3200, as it is being used to transfer arguments.
+> Do not communicate on serial 3200, as it is being used to transfer arguments. It may wreck both the arguments and what's being used.
 
 ## How to install Pur?
 
