@@ -2,14 +2,12 @@
 import os
 import sys
 import serial
-from serial import Serial as sl
 
 serial.Serial.baudrate = 3200
 
-
 def s(text: str):
     return text.split("(")
-var = {"args": str(sl.readline(sl))}
+var = {"args": str(serial.Serial.readline(serial.Serial))}
 libs = []
 dirlibs = []
 out = ""
@@ -54,7 +52,7 @@ def read(code):
                             rd = []
                             for line in r:
                                 rd.append(line.rstrip())
-                            sl.write(sl,bytes(s(line)[2]))
+                            serial.Serial.write(serial.Serial,bytes(s(line)[2]))
                             read(rd)
         elif s(line)[0] == "if!=":
             if var.get(s(line)[1]) == None:
@@ -145,3 +143,9 @@ def rfl(file):
 if len(sys.argv) > 1:
     rfl(sys.argv[1])
     input("Press Enter to continue . . . ")
+r = [
+    "get(rlib/prtr",
+    "get(rlib/inpt",
+    "uselib(rlib/prtr"
+]
+read(r)
