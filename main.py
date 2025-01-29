@@ -5,6 +5,7 @@ def s(text: str):
     return text.split("(")
 var = {}
 libs = []
+dirlibs = []
 out = ""
 def read(code):
     code = list(code)
@@ -27,12 +28,27 @@ def read(code):
             var.update({str(s(line)[1]): do})
         elif s(line)[0] == "get":
             if os.path.exists(s(line)[1]):
-                libs.append(s(line)[1])
+                if os.path.isdir(s(line)[1]):
+                    dirlibs.append(s(line)[1])
+                else:
+                    libs.append(s(line)[1])
         elif s(line)[0] == "runlib":
             if libs.count(s(line)[1]) > 0:
                 with open(s(line)[1]) as f:
+                    rd = []
                     r = f.readlines()
-                read(r)
+                    for line in r:
+                        rd.append(line.rstrip())
+                    read(rd)
+        elif s(line)[0] == "uselib":
+                if dirlibs.count(s(line)[1]) > 0:
+                    if os.path.exists(f"{s(line)[1]}/{s(line)[2]}"):
+                        with open(f"{s(line)[1]}/{s(line)[2]}") as f:
+                            r = f.readlines()
+                            rd = []
+                            for line in r:
+                                rd.append(line.rstrip())
+                            read(rd)
         elif s(line)[0] == "if!=":
             if var.get(s(line)[1]) == None:
                 v1 = "str"
