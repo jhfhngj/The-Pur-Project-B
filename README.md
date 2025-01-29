@@ -2,7 +2,6 @@
 
 Remake of Pur, Pur originally was hard to develop
 
-> [!IMPORTANT]
 > [!WARNING]
 > Do not communicate on serial 3200, as it is being used to transfer arguments.
 
